@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('mensagem_topicos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreingId('mensagem_id')->constrained()
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreingId('topico_id')->constrained()
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->unique(['mensagem_id', 'topico_id']);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('mensagem_topico');
     }
 };
