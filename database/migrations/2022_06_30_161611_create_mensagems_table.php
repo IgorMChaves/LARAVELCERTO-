@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mensagems', function (Blueprint $table) {
             $table->id();
-            $table->foreingId('user_id')->constrained()
+            $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('titulo');
             $table->text('mensagem');

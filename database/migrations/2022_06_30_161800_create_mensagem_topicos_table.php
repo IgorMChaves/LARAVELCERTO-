@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('mensagem_topicos', function (Blueprint $table) {
             $table->id();
-            $table->foreingId('mensagem_id')->constrained()
+            $table->foreignId('mensagem_id')->constrained()
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreingId('topico_id')->constrained()
+            $table->foreignId('topico_id')->constrained()
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->unique(['mensagem_id', 'topico_id']);
             $table->timestamps();
