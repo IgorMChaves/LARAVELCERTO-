@@ -30,7 +30,7 @@ extends('restric.layout')
             @endforeach
         </div>
     </div>
-    <button type="submit" class="button">Salva</button>
+    <button type="submit" class="button">Salvar</button>
 </form>
 @endsection
     
