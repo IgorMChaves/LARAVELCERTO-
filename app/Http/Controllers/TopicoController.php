@@ -42,7 +42,7 @@ class TopicoController extends Controller
         if($validated){
             $topico = new Topico();
             $topico->topico = $request->get('topico');
-            $topico->save;
+            $topico->save();
             return redirect('topico');
         }
     }

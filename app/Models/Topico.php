@@ -10,6 +10,6 @@ class Topico extends Model
     use HasFactory;
     public function mensagens()
     {
-        return $this->belonsToMany(Mensagem::class);
+        return $this->belongsToMany(Mensagem::class);
     }
 }
